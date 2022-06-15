@@ -15,22 +15,17 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js" defer></script>
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+        <div class="flex flex-col justify-between min-h-screen">
 
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
+            <x-partials.header />
+            <main class="flex-1">
+                @yield('main')
             </main>
+            <x-partials.footer />
+
         </div>
     </body>
 </html>
