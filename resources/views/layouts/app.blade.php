@@ -17,11 +17,11 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js" defer></script>
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased bg-white dark:bg-gray-700">
         <div class="flex flex-col justify-between min-h-screen">
 
             <x-partials.header />
-            <main class="flex-1">
+            <main class="flex-1 mt-8">
                 @yield('main')
             </main>
             <x-partials.footer />
