@@ -16,6 +16,8 @@
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js" defer></script>
+
+        @livewireStyles
     </head>
     <body class="font-sans antialiased bg-white dark:bg-gray-700">
         <div class="flex flex-col justify-between min-h-screen">
@@ -27,5 +29,7 @@
             <x-partials.footer />
 
         </div>
+
+        @livewireScripts
     </body>
 </html>
