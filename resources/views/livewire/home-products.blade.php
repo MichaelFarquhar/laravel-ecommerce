@@ -1,28 +1,12 @@
-<div>
-    <aside class="w-64" aria-label="Sidebar">
+<div class="flex justify-between space-x-16">
+    <aside class="md:w-1/4 sm:w-1/2" aria-label="Sidebar">
         <div class="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
             <ul class="space-y-2">
-                <li>
-                    <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        <span class="ml-3">Recently Added</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span class="ml-3">Almost Gone</span>
-                    </a>
-                </li>
+                <x-home.category-newest-link :sort="$sort"/>
+                <x-home.category-low-stock-link :sort="$sort"/>
             </ul>
 
-            <div class="text-gray-700 dark:text-neutral-400 text-xs font-bold uppercase p-2 mt-5 mb-1">
-                Categories
-            </div>
+            <x-home.category-label />
             <ul class="space-y-2">
                 @foreach ($categories as $category)
                     <x-home.category-link :category="$category" />
@@ -30,4 +14,22 @@
             </ul>
         </div>
     </aside>
+    <div class="grid xl:grid-cols-3 lg:grid-cols-2 xs:grid-cols-1 gap-8 w-full">
+        @foreach ($products as $product)
+            <div class="max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+                <a href="#">
+                    <img class="p-8 rounded-t-lg" src="/docs/images/products/product-1.png" alt="product image" />
+                </a>
+                <div class="px-5 pb-5">
+                    <a href="#">
+                        <h5 class="mb-5 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{$product->name}}</h5>
+                    </a>
+                    <div class="flex justify-between items-center">
+                        <span class="text-3xl font-bold text-gray-900 dark:text-white">${{$product->price}}</span>
+                        <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
 </div>

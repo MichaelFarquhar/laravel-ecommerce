@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('main')
-<x-container>
-    <div class="flex justify-start gap-12">
+    <x-container>
         <livewire:home-products />
-    </div>
-</x-container>
+    </x-container>
 @endsection

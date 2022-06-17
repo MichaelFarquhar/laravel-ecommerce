@@ -11,4 +11,9 @@ class Category extends Model
     
     public $timestamps = false;
     protected $guarded = [];
+
+    public function product()
+    {
+        $this->hasOne(Product::class);
+    }
 }

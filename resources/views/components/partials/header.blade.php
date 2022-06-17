@@ -1,6 +1,6 @@
 <header class="bg-white dark:bg-gray-800">
     <x-container>
-        <nav class="sm:px-4 py-3">
+        <nav class="py-3">
             <div class="flex flex-wrap justify-between items-center mx-auto">
                 <x-partials.logo />
                 <div class="flex md:order-2">
