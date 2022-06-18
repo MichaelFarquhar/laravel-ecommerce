@@ -1,7 +1,7 @@
 @props(['sort'])
 
 <li>
-    <a wire:click="getLowStockProducts" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white cursor-pointer
+    <a wire:click="getLowStockProducts" class="flex items-center py-2 px-4 text-base font-normal text-gray-900 rounded-lg dark:text-white cursor-pointer
         {{$sort== 'low-stock' ? 'bg-gray-100 dark:bg-gray-700' : 'hover:bg-gray-100 dark:hover:bg-gray-700'}}
     ">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
