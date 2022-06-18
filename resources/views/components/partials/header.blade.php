@@ -1,4 +1,4 @@
-<header class="bg-white dark:bg-gray-800">
+<header class="bg-white dark:bg-gray-800 sticky top-0">
     <x-container>
         <nav class="py-3">
             <div class="flex flex-wrap justify-between items-center mx-auto">
